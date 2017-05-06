@@ -1,0 +1,14 @@
+{
+  "name": "node-lesson-6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chainn",
+  "license": "ISC",
+  "dependencies": {
+    "should": "^11.2.1"
+  }
+}
