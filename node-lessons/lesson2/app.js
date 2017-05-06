@@ -1,12 +1,12 @@
 var express = require('express');
-var ultility = require('utility');
+var utility = require('utility');
 
 var app = express();
 
 app.get('/', function (req, res) {
    var q = req.query.q;
-   console.log('q: ', q);
-   res.send(q)
+   var md5Value = utility.md5(q);
+   res.send(md5Value)
 });
 
 app.listen(3010, function (req, res) {
