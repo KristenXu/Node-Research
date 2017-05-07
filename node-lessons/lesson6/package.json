@@ -10,5 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "should": "^11.2.1"
+  },
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "mocha": "^3.3.0"
   }
 }
