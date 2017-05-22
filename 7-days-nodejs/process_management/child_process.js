@@ -1,5 +1,5 @@
 var child_process = require('child_process')
-var child = child_process.spawn('node', [ 'xxx.js' ]);
+var child = child_process.spawn('node', [ 'test.js' ]);
 
 child.stdout.on('data', function (data) {
     console.log('stdout: ' + data);
