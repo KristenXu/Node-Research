@@ -1,0 +1,1 @@
+console.log(require('./module_currency'))
