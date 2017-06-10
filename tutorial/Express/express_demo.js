@@ -5,9 +5,12 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false })
 var fs = require("fs");
 var multer  = require('multer');
+var cookieParser = require('cookie-parser')
 
+app.use(cookieParser())
 app.get('/', function (req, res) {
     res.send('Hello World');
+    console.log("Cookies: ", req.cookies)
 })
 
 var server = app.listen(8081, function () {
