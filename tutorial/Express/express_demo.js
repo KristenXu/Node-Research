@@ -8,6 +8,7 @@ var multer  = require('multer');
 var cookieParser = require('cookie-parser')
 
 app.use(cookieParser())
+app.use(multer({ dest: '/tmp/'}).array('image'));
 app.get('/', function (req, res) {
     res.send('Hello World');
     console.log("Cookies: ", req.cookies)
@@ -73,6 +74,7 @@ app.post('/file_upload', function (req, res) {
                 };
             }
             console.log( response );
+            res.header("Content-Type", "application/json; charset=utf-8");
             res.end( JSON.stringify( response ) );
         });
     });
