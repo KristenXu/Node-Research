@@ -16,4 +16,19 @@ app.get('/', function (req, res) {
     res.send(responseText)
 })
 
+// Application level
+app.use(function (req, res, next) {
+    console.log('Time:', Date.now())
+    next()
+})
+// The function is executed for any type of HTTP request on the /user/:id path.
+app.use('/user/:id', function (req, res, next) {
+    console.log('Request Type:', req.method)
+    next()
+})
+//The function handles GET requests to the /user/:id path.
+app.get('/user/:id', function (req, res, next) {
+    res.send('USER')
+})
+
 app.listen(3000)
