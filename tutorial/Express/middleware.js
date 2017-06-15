@@ -71,4 +71,6 @@ router.get('/user/:id', function (req, res, next) {
 // mount the router on the app
 app.use('/test_router', router)
 
+app.use('/static', express.static(__dirname))
+
 app.listen(3000)
