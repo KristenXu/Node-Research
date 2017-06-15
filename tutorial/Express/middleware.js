@@ -37,7 +37,7 @@ app.get('/user/:id', function (req, res, next) {
 // Router level
 // a middleware function with no mount path. This code is executed for every request to the router
 router.use(function (req, res, next) {
-    console.log('Time:', Date.now())
+    console.log('Router Time:', Date.now())
     next()
 })
 
@@ -57,6 +57,7 @@ router.get('/user/:id', function (req, res, next) {
     // otherwise pass control to the next middleware function in this stack
     else next()
 }, function (req, res, next) {
+    console.log(req.params.id)
     // render a regular page
     res.render('regular')
 })
@@ -64,10 +65,10 @@ router.get('/user/:id', function (req, res, next) {
 // handler for the /user/:id path, which renders a special page
 router.get('/user/:id', function (req, res, next) {
     console.log(req.params.id)
-    res.render('special')
+    res.render('./special.html')
 })
 
 // mount the router on the app
-app.use('/', router)
+app.use('/test_router', router)
 
 app.listen(3000)
